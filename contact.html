@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dahotre & Dahotre Chartered Accountants</title>
+    <link rel="icon" href="images/Favicon.png" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <style>
+        .page-header {
+            background-color: var(--color-primary);
+            color: var(--color-surface);
+            padding: calc(var(--space-xl) + 80px) 0 var(--space-xl);
+            text-align: center;
+        }
+        .page-header h1 {
+            color: var(--color-secondary);
+            font-size: 3rem;
+            margin-bottom: var(--space-sm);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-xl);
+        }
+        .contact-info-card {
+            background-color: var(--color-primary);
+            color: var(--color-surface);
+            padding: var(--space-lg);
+            border-radius: var(--radius-md);
+            height: 100%;
+        }
+        .contact-info-card h3 {
+            color: var(--color-secondary);
+            margin-bottom: var(--space-md);
+        }
+        .contact-detail {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 1.5rem;
+            align-items: flex-start;
+        }
+        .contact-detail i {
+            color: var(--color-secondary);
+            font-size: 1.5rem;
+            margin-top: 5px;
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-body);
+            font-size: 1rem;
+            background-color: #fcfcfc;
+            transition: border-color var(--transition-fast);
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: var(--color-primary);
+        }
+        textarea.form-control {
+            resize: vertical;
+            min-height: 150px;
+        }
+        @media(max-width: 768px) {
+            .contact-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand" style="padding: 5px 0;">
+                <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 65px; object-fit: contain;">
+            </a>
+            <button class="mobile-menu-btn"><i class="fas fa-bars"></i></button>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item">
+                    <a href="about.html">About Us <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#leadership">Our Leadership</a>
+                        <a href="about.html#history-values">History & Core Values</a>
+                        <a href="about.html#industry-reach">Industry Reach</a>
+                        <a href="about.html#our-team">Faces of DND</a>
+                        <a href="awards.html">Awards & Recognition</a>
+                    </div>
+                </div>
+                <a href="services.html">Services</a>
+                <div class="nav-item">
+                    <a href="careers.html">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="careers.html#life-at-dnd">Life at DND</a>
+                        <a href="careers.html#open-positions">Open Positions</a>
+                    </div>
+                </div>
+                <a href="decode.html">Blogs</a>
+                <a href="contact.html" class="active">Consult Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Get In Touch</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);">Need professional advice? Reach out to our experts today.</p>
+        </div>
+    </div>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-grid">
+                
+                <div class="animate-on-scroll">
+                    <div class="contact-info-card">
+                        <h3>Headquarters</h3>
+                        <p style="margin-bottom: 2rem; color: rgba(255,255,255,0.8);">We are dedicated to delivering top-tier services to our clients. Feel free to contact us for inquiries, consulting, or career opportunities.</p>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4 style="color:white; margin-bottom:5px;">Address</h4>
+                                <p style="color:rgba(255,255,255,0.7);"><a href="https://maps.app.goo.gl/U2uwy6Gg6hF7pYxn9" target="_blank" rel="noopener noreferrer" style="color: inherit; text-decoration: none;">Gate No 2, Technology Center, Flat No 3, Gaurav Apartment,<br>Behind Walchand, opp. BLOCK-2,<br>Kothrud, Pune, Maharashtra 411038</a></p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-detail">
+                            <i class="fas fa-phone-alt"></i>
+                            <div>
+                                <h4 style="color:white; margin-bottom:5px;">Phone</h4>
+                                <p style="color:rgba(255,255,255,0.7);"><a href="tel:02067426111" style="color: inherit; text-decoration: none;">020-67426111</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4 style="color:white; margin-bottom:5px;">Email</h4>
+                                <p style="color:rgba(255,255,255,0.7);"><a href="mailto:info@dahotreca.com" style="color: inherit; text-decoration: none;">info@dahotreca.com</a></p>
+                            </div>
+                        </div>
+
+                        <div class="contact-detail">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4 style="color:white; margin-bottom:5px;">Hours of Operation</h4>
+                                <p style="color:rgba(255,255,255,0.7);">Monday - Saturday: 9:00 AM - 5:00 PM (2nd & 4th Sat Off)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="animate-on-scroll" style="transition-delay:0.2s">
+                    <h2 class="section-title" style="text-align: left; margin-bottom: 1.5rem;">Send a Message</h2>
+                    <form action="#" method="POST" id="contactForm">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Subject / Service Interest">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 60px; object-fit: contain; margin-bottom: 1rem; background: white; padding: 10px; border-radius: 4px;">
+                    <p>Dahotre and Dahotre Chartered Accountants is an accounting, auditing, and advisory firm backed by a robust network of financial experts, helping businesses navigate compliance and drive sustainable growth across India.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 15px;">
+                        <a href="https://www.linkedin.com/company/dahotre-and-dahotre" target="_blank" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#audit">Audit, Assurance & Advisory Services</a></li>
+                        <li><a href="services.html#csw">Company Secretary Work</a></li>
+                        <li><a href="services.html#direct-taxes">Direct Taxation & Income Tax Services</a></li>
+                        <li><a href="services.html#indirect-taxes">Indirect Taxation & GST Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dahotre & Dahotre Chartered Accountants. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert("Thank you! Your message has been received.");
+            this.reset();
+        });
+    </script>
+</body>
+</html>
