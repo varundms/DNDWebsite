@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Events and Celebrations at Dahotre & Dahotre - Glimpses of our vibrant office culture and team activities.">
+    <title>Events & Celebrations | Dahotre & Dahotre</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/Favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9)), url('images/hero-bg.png') center/cover no-repeat;
+            padding: 180px 0 100px;
+            text-align: center;
+            color: white;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .event-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: transform var(--transition-normal);
+        }
+        .event-card:hover {
+            transform: translateY(-8px);
+        }
+        .event-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .event-details {
+            padding: 2rem;
+        }
+        .event-tag {
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--color-secondary);
+            padding: 0.3rem 1rem;
+            border-radius: var(--radius-full);
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .event-title {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+        }
+        .event-desc {
+            color: var(--color-text-muted);
+            line-height: 1.6;
+        }
+
+        #modalGallery img {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        #modalGallery img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Tabs Styles */
+        .tabs-container {
+            margin-top: 2rem;
+        }
+        .tabs-header {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(10, 25, 47, 0.1);
+            padding-bottom: 1rem;
+        }
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--color-text-muted);
+            cursor: pointer;
+            position: relative;
+            transition: all var(--transition-normal);
+            font-family: var(--font-heading);
+        }
+        .tab-btn.active {
+            color: var(--color-primary);
+        }
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1rem;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--color-secondary);
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand" style="padding: 5px 0;">
+                <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 65px; object-fit: contain;">
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item">
+                    <a href="about.html">About Us <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#leadership">Our Leadership</a>
+                        <a href="about.html#history-values">History & Core Values</a>
+                        <a href="about.html#industry-reach">Industry Reach</a>
+                        <a href="about.html#our-team">Faces of DND</a>
+                        <a href="awards.html">Awards & Recognition</a>
+                    </div>
+                </div>
+                <a href="services.html">Services</a>
+                <div class="nav-item">
+                    <a href="careers.html" class="active">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="careers.html#life-at-dnd">Life at DND</a>
+                        <a href="careers.html#open-positions">Open Positions</a>
+                    </div>
+                </div>
+                <a href="decode.html">Blogs</a>
+                <a href="contact.html" class="btn btn-primary" style="color:var(--color-primary); margin-left: 1rem;">Consult Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-on-scroll" style="color: white; font-size: 3rem; font-family: var(--font-heading);">Events & Celebrations</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);" class="animate-on-scroll">
+                Beyond numbers and balance sheets—glimpses into our vibrant culture, shared milestones, and team spirit.
+            </p>
+        </div>
+    </header>
+
+    <!-- Events Section -->
+    <section class="section bg-surface">
+        <div class="container">
+            <div class="tabs-container">
+                <div class="tabs-header">
+                    <button class="tab-btn active" onclick="switchTab('cultural', this)">Cultural Events</button>
+                    <button class="tab-btn" onclick="switchTab('seminars', this)">Seminars</button>
+                </div>
+
+                <div id="cultural" class="tab-content active">
+                    <div class="gallery-grid">
+                        <!-- Event 1 -->
+                        <div class="event-card animate-on-scroll" onclick="openGallery('Meraki 2025')">
+                            <img src="images/meraki2025_1.jpg" onerror="this.onerror=null; this.src='images/meraki2025_1.png';" alt="Meraki 2025" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2025</h3>
+                                <p class="event-desc">Dive into the gallery of our most recent Meraki 2025 gathering. Relive the spectacular celebrations and memories we made.</p>
+                            </div>
+                        </div>
+
+                        <!-- Event 2 -->
+                        <div class="event-card animate-on-scroll" style="transition-delay: 0.1s;" onclick="openGallery('Meraki 2024')">
+                            <img src="images/meraki2024_1.jpg" onerror="this.onerror=null; this.src='images/meraki2024_1.png';" alt="Meraki 2024" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2024</h3>
+                                <p class="event-desc">Explore the photo collection from Meraki 2024. See how our teams united for a day of innovation, creativity, and fun.</p>
+                            </div>
+                        </div>
+                        
+                        <!-- Event 3 -->
+                        <div class="event-card animate-on-scroll" style="transition-delay: 0.2s;" onclick="openGallery('Meraki 2023')">
+                            <img src="images/meraki2023_4.JPG" onerror="this.onerror=null; this.src='images/meraki2023_4.jpg';" alt="Meraki 2023" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2023</h3>
+                                <p class="event-desc">Click to view our exclusive photo gallery from the vibrant Meraki 2023 fest. A visual journey of talent and togetherness.</p>
+                            </div>
+                        </div>
+
+                        <!-- Event 4 -->
+                        <div class="event-card animate-on-scroll" style="transition-delay: 0.3s;" onclick="openGallery('Meraki 2022')">
+                            <img src="images/meraki2022_1.jpg" onerror="this.onerror=null; this.src='images/meraki2022_1.png';" alt="Meraki 2022" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2022</h3>
+                                <p class="event-desc">Click to view our photo gallery showcasing highlights from Meraki 2022. Experience the energy and memorable moments.</p>
+                            </div>
+                        </div>
+
+                        <!-- Event 5 -->
+                        <div class="event-card animate-on-scroll" style="transition-delay: 0.4s;" onclick="openGallery('Meraki 2021')">
+                            <img src="images/meraki2021_21.jpg" onerror="this.onerror=null; this.src='images/meraki2021_21.png';" alt="Meraki 2021" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2021</h3>
+                                <p class="event-desc">A throwback to the joyous celebrations of Meraki 2021. Journey through these captured moments of our cultural spirit.</p>
+                            </div>
+                        </div>
+
+                        <!-- Event 6 -->
+                        <div class="event-card animate-on-scroll" style="transition-delay: 0.5s;" onclick="openGallery('Meraki 2020')">
+                            <img src="images/meraki2020_14.jpg" onerror="this.onerror=null; this.src='images/meraki2020_14.png';" alt="Meraki 2020" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2020</h3>
+                                <p class="event-desc">Revisit Meraki 2020 with this exclusive gallery. A reminder of our firm's enduring unity and diverse talents.</p>
+                            </div>
+                        </div>
+
+                        <!-- Event 7 -->
+                        <div class="event-card animate-on-scroll" style="transition-delay: 0.6s;" onclick="openGallery('Meraki 2019')">
+                            <img src="images/meraki2019_1.jpg" onerror="this.onerror=null; this.src='images/meraki2019_1.png';" alt="Meraki 2019" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Cultural</span>
+                                <h3 class="event-title">Meraki 2019</h3>
+                                <p class="event-desc">Where the tradition blossomed. Explore the classic highlights from our incredible Meraki 2019 festival.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="seminars" class="tab-content">
+                    <div class="gallery-grid">
+                        <!-- Seminar 1 -->
+                        <div class="event-card animate-on-scroll" onclick="openGallery('Mega Seminar 2026')">
+                            <img src="images/megaseminar2026_7.png" onerror="this.onerror=null; this.src='images/megaseminar2026_7.jpg';" alt="Mega Seminar 2026" class="event-img">
+                            <div class="event-details">
+                                <span class="event-tag">Seminar</span>
+                                <h3 class="event-title">Mega Seminar 2026</h3>
+                                <p class="event-desc">Exploring the future of financial excellence—a visual journey of our latest knowledge-sharing session and professional insights.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 4rem;">
+                <p style="color: var(--color-text-muted); font-style: italic;">"Great things in business are never done by one person. They're done by a team of people."</p>
+                <div style="margin-top: 2rem;">
+                    <a href="careers.html" class="btn btn-primary"><i class="fas fa-arrow-left"></i> Back to Careers</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 60px; object-fit: contain; margin-bottom: 1rem; background: white; padding: 10px; border-radius: 4px;">
+                    <p>Dahotre and Dahotre Chartered Accountants is an accounting, auditing, and advisory firm backed by a robust network of financial experts, helping businesses navigate compliance and drive sustainable growth across India.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 15px;">
+                        <a href="https://www.linkedin.com/company/dahotre-and-dahotre" target="_blank" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#audit">Audit, Assurance & Advisory Services</a></li>
+                        <li><a href="services.html#csw">Company Secretary Work</a></li>
+                        <li><a href="services.html#direct-taxes">Direct Taxation & Income Tax Services</a></li>
+                        <li><a href="services.html#indirect-taxes">Indirect Taxation & GST Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dahotre & Dahotre Chartered Accountants. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Gallery Modal -->
+    <div id="eventModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h2 id="modalTitle" style="color: white; margin-bottom: 2rem; font-size: 2.5rem; text-align: center; font-family: var(--font-heading);">Gallery</h2>
+            <div id="modalGallery" class="modal-gallery">
+                <!-- Images injected here via JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal for Large View -->
+    <div id="imageLightbox" class="modal" style="z-index: 20000; background: rgba(0,0,0,0.95); display: none;">
+        <span class="modal-close" onclick="closeLightbox()" style="position: absolute; top: 20px; right: 40px; font-size: 50px; z-index: 20001;">&times;</span>
+        <div style="display: flex; align-items: center; justify-content: center; height: 100vh; padding: 20px;" onclick="closeLightbox()">
+            <img id="lightboxImg" src="" style="max-width: 95%; max-height: 90vh; object-fit: contain; box-shadow: 0 0 30px rgba(0,0,0,0.5); cursor: zoom-out;">
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        function switchTab(tabId, btn) {
+            // Hide all contents
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.classList.remove('active');
+            });
+            // Deactivate all buttons
+            document.querySelectorAll('.tab-btn').forEach(button => {
+                button.classList.remove('active');
+            });
+            // Show selected content and activate button
+            document.getElementById(tabId).classList.add('active');
+            btn.classList.add('active');
+        }
+
+        function openGallery(title) {
+            // Convert title (e.g., "Meraki 2022") to a prefix (e.g., "meraki2022")
+            const prefix = title.toLowerCase().replace(/\s+/g, '');
+            
+            // Generate tiles automatically by trying up to 30 sequential images
+            // If the image doesn't exist, the 'onerror' completely hides it from the screen!
+            let html = "";
+            for(let i = 1; i <= 30; i++) {
+                // Try JPG format
+                html += `<img src="images/${prefix}_${i}.jpg" alt="${title} Photo ${i}" onerror="this.style.display='none'" onclick="openLightbox(this.src)">`;
+                // Try PNG format
+                html += `<img src="images/${prefix}_${i}.png" alt="${title} Photo ${i}" onerror="this.style.display='none'" onclick="openLightbox(this.src)">`;
+            }
+
+            document.getElementById('modalTitle').innerText = title + " Photo Gallery";
+            document.getElementById('modalGallery').innerHTML = html;
+            document.getElementById('eventModal').style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        function closeModal() {
+            document.getElementById('eventModal').style.display = "none";
+            document.body.style.overflow = "auto";
+        }
+
+        function openLightbox(src) {
+            document.getElementById('lightboxImg').src = src;
+            document.getElementById('imageLightbox').style.display = "block";
+        }
+
+        function closeLightbox() {
+            document.getElementById('imageLightbox').style.display = "none";
+        }
+        
+        window.onclick = function(event) {
+            var eventModal = document.getElementById('eventModal');
+            var lightboxModal = document.getElementById('imageLightbox');
+            if (event.target == eventModal) {
+                closeModal();
+            }
+            if (event.target == lightboxModal) {
+                closeLightbox();
+            }
+        }
+    </script>
+</body>
+</html>

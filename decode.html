@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Decode by Dahotre & Dahotre - Financial insights, regulatory updates, and corporate blogs.">
+    <title>Decode | Dahotre & Dahotre</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/Favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9)), url('images/hero-bg.png') center/cover no-repeat;
+            padding: 180px 0 100px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--color-surface);
+        }
+        
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .blog-card {
+            background: var(--color-surface);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+            display: flex;
+            flex-direction: column;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .blog-img {
+            width: 100%;
+            height: 220px;
+            background-color: var(--color-primary);
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .blog-category {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: var(--color-secondary);
+            color: var(--color-primary);
+            padding: 0.3rem 1rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: var(--radius-full);
+            text-transform: uppercase;
+        }
+        
+        .blog-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .blog-meta {
+            display: flex;
+            justify-content: flex-start;
+            gap: 1rem;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            margin-bottom: 1rem;
+        }
+        
+        .blog-meta i { margin-right: 5px; color: var(--color-secondary); }
+        
+        .blog-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-primary);
+            margin-bottom: 1rem;
+            line-height: 1.4;
+            transition: color var(--transition-fast);
+        }
+        
+        .blog-card {
+            transition: opacity 0.4s ease, transform 0.4s ease;
+            overflow: hidden;
+        }
+        
+        .blog-image {
+            height: 200px;
+            overflow: hidden;
+            background-color: var(--color-primary);
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-card p {
+            color: var(--color-text-main);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+            line-height: 1.6;
+        }
+        
+        .read-more {
+            color: var(--color-primary);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.95rem;
+            transition: color var(--transition-fast);
+        }
+        
+        .read-more i {
+            transition: transform var(--transition-fast);
+        }
+        
+        .read-more:hover {
+            color: var(--color-secondary);
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+
+        /* Toggle Switch */
+        .decode-toggle-container {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 4rem;
+        }
+        .decode-toggle {
+            display: inline-flex;
+            background: rgba(10, 25, 47, 0.05);
+            padding: 6px;
+            border-radius: 50px;
+            border: 1px solid rgba(10, 25, 47, 0.1);
+        }
+        .toggle-btn {
+            background: none;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--color-primary);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            font-size: 1rem;
+            position: relative;
+        }
+        .toggle-btn.active {
+            background: var(--color-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(10, 25, 47, 0.2);
+        }
+        .toggle-btn:not(.active):hover {
+            background: rgba(10, 25, 47, 0.1);
+        }
+
+        /* Decode Layout with Sidebar */
+        .decode-main-container {
+            display: flex;
+            gap: 3rem;
+            align-items: flex-start;
+        }
+
+        .decode-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+            position: sticky;
+            top: 100px;
+            background: white;
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.05);
+            display: block; /* Always visible to maintain structure */
+        }
+
+        .decode-sidebar.active {
+            display: block;
+        }
+
+        .decode-sidebar h4 {
+            font-size: 1.1rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid var(--color-secondary);
+        }
+
+        .fy-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .fy-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .fy-link {
+            display: block;
+            padding: 0.8rem 1rem;
+            color: var(--color-text-main);
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .fy-link:hover, .fy-link.active {
+            background: var(--color-primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .decode-content-area {
+            flex-grow: 1;
+        }
+
+        @media (max-width: 992px) {
+            .decode-main-container {
+                flex-direction: column;
+            }
+            .decode-sidebar {
+                width: 100%;
+                position: relative;
+                top: 0;
+                margin-bottom: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand" style="padding: 5px 0;">
+                <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 65px; object-fit: contain;">
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item">
+                    <a href="about.html">About Us <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#leadership">Our Leadership</a>
+                        <a href="about.html#history-values">History & Core Values</a>
+                        <a href="about.html#industry-reach">Industry Reach</a>
+                        <a href="about.html#our-team">Faces of DND</a>
+                        <a href="awards.html">Awards & Recognition</a>
+                    </div>
+                </div>
+                <a href="services.html">Services</a>
+                <div class="nav-item">
+                    <a href="careers.html">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="careers.html#life-at-dnd">Life at DND</a>
+                        <a href="careers.html#open-positions">Open Positions</a>
+                    </div>
+                </div>
+                <a href="decode.html" class="active">Blogs</a>
+                <a href="contact.html" class="btn btn-primary" style="color:var(--color-primary); margin-left: 1rem;">Consult Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-on-scroll">Decode</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);" class="animate-on-scroll">
+                Expert insights, detailed regulatory analysis, and trending topics in the world of finance and taxation.
+            </p>
+        </div>
+    </header>
+
+    <!-- Blog Section -->
+    <section class="section bg-surface">
+        <div class="container">
+            <!-- Toggle Options -->
+            <div class="decode-toggle-container animate-on-scroll">
+                <div class="decode-toggle">
+                    <button class="toggle-btn active" data-filter="all">All Content</button>
+                    <button class="toggle-btn" data-filter="blogs">Blogs</button>
+                    <button class="toggle-btn" data-filter="newsletters">Newsletters</button>
+                </div>
+            </div>
+
+            <div class="decode-main-container">
+                <aside class="decode-sidebar" id="fy-sidebar">
+                    <h4>Financial Years</h4>
+                    <ul class="fy-list">
+                        <li class="fy-item"><a href="#" class="fy-link active" data-fy="all">All Years</a></li>
+                        <li class="fy-item"><a href="#" class="fy-link" data-fy="2026-27">FY 2026-27</a></li>
+                        <li class="fy-item"><a href="#" class="fy-link" data-fy="2025-26">FY 2025-26</a></li>
+                        <li class="fy-item"><a href="#" class="fy-link" data-fy="2024-25">FY 2024-25</a></li>
+                    </ul>
+                </aside>
+
+                <div class="decode-content-area">
+                    <div class="blog-grid">
+                <!-- Placeholder Blogs -->
+                <article id="blogs-placeholder" class="blog-card" data-category="blogs" style="display: none; grid-column: 1 / -1; background: var(--color-surface); padding: 3rem; text-align: center; border-radius: var(--radius-lg); box-shadow: var(--shadow-sm); border: 1px dashed var(--color-secondary);">
+                    <i class="fas fa-pen-nib" style="font-size: 3rem; color: var(--color-secondary); margin-bottom: 1rem; opacity: 0.5;"></i>
+                    <h3 style="color: var(--color-primary); font-size: 1.5rem; margin-bottom: 0.5rem;">Stay Tuned. Coming Soon!</h3>
+                    <p style="color: var(--color-text-muted);">We are working on bringing you the most insightful blogs. Check back soon.</p>
+                </article>
+
+                <!-- Blog Item End (Use as hook) -->
+
+                <!-- Newsletters Begin -->
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 31, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 13th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=3017" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 31, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 12th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=3014" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 31, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 11th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=3011" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 21, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 10th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=3005" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> March 21, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 9th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=3002" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 21, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 8th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2994" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 21, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 7th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2991" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 12, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 6th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2987" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 12, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 5th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2984" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> February 12, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 4th Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2981" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 29, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 3rd Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2976" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 29, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 2nd Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2973" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> January 29, 2026</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 1st Issue of 2026 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2970" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 30, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 50th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2964" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 24, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 49th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2960" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 24, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 48th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2957" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 24, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 47th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2954" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 24, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 46th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2951" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> December 24, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 45th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2948" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 17, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 44th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2935" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 17, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 43rd Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2932" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 17, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 42nd Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2929" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> November 17, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 41st Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2926" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> October 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 40th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2919" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> October 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 39th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2915" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> October 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 38th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2912" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> October 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 37th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2908" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> October 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 36th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2905" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> September 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 35th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2894" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> September 11, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 34th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2891" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> August 21, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 33rd Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2887" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> August 21, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 32nd Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2884" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> August 21, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 31th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2880" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> August 5, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 30th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2875" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> August 5, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 29th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2872" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> August 5, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 28th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2869" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 14, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 27th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2860" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 26th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2855" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 25th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2852" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 24th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2849" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 23rd Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2846" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 22nd Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2843" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 21st Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2840" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 20th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2837" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 19th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2833" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 18th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2830" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.2s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 17th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2827" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.30000000000000004s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 16th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2824" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="blog-card animate-on-scroll" data-fy="2025-26" data-category="newsletters" style="transition-delay: 0.1s;">
+                    <div class="blog-content">
+                        <div style="margin-bottom: 0.8rem;"><span style="color: var(--color-secondary); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Newsletter</span></div>
+                        <div class="blog-meta">
+                            <span><i class="fas fa-calendar"></i> July 7, 2025</span>
+                            <span><i class="fas fa-user-circle"></i> DahotreCA</span>
+                        </div>
+                        <h3 class="blog-title" style="font-size: 1.15rem;">The 14th Issue of 2025 of Dahotre’s Weekly Newsletter</h3>
+                        <p>Weekly updates and insights regarding taxation, compliance, and corporate updates.</p>
+                        <a href="https://dahotreca.com/?p=2818" target="_blank" class="read-more">Read Newsletter <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center" style="margin-top: 4rem;">
+                <button class="btn btn-outline" style="color: var(--color-primary); border-color: var(--color-primary);">Load More Articles</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 60px; object-fit: contain; margin-bottom: 1rem; background: white; padding: 10px; border-radius: 4px;">
+                    <p>Dahotre and Dahotre Chartered Accountants is an accounting, auditing, and advisory firm backed by a robust network of financial experts, helping businesses navigate compliance and drive sustainable growth across India.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 15px;">
+                        <a href="https://www.linkedin.com/company/dahotre-and-dahotre" target="_blank" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#audit">Audit, Assurance & Advisory Services</a></li>
+                        <li><a href="services.html#csw">Company Secretary Work</a></li>
+                        <li><a href="services.html#direct-taxes">Direct Taxation & Income Tax Services</a></li>
+                        <li><a href="services.html#indirect-taxes">Indirect Taxation & GST Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dahotre & Dahotre Chartered Accountants. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const toggleBtns = document.querySelectorAll('.toggle-btn');
+            const blogCards = document.querySelectorAll('.blog-card');
+
+            // --- Min Read Badge ---
+            // Assign read times: blogs get 3-8 min, newsletters get 2 min
+            const blogReadTimes  = [3, 4, 5, 6, 7, 8];
+            blogCards.forEach((card, i) => {
+                const metaEl = card.querySelector('.blog-meta');
+                if (metaEl) {
+                    const categoryBadge = card.querySelector('span[style*="uppercase"]');
+                    const isNewsletter = categoryBadge && categoryBadge.innerText.toLowerCase().includes('newsletter');
+                    const mins = isNewsletter ? 20 : blogReadTimes[i % blogReadTimes.length];
+                    // Insert after the first <span> (the date)
+                    const dateSpan = metaEl.querySelector('span');
+                    if (dateSpan) {
+                        const readBadge = document.createElement('span');
+                        readBadge.innerHTML = `<i class="fas fa-clock" style="margin-right:4px; color:var(--color-secondary);"></i>${mins} min read`;
+                        readBadge.style.cssText = 'color: var(--color-secondary); font-weight: 600;';
+                        dateSpan.after(readBadge);
+                    }
+                }
+            });
+
+            // --- Category Tagging for Toggle ---
+            blogCards.forEach(card => {
+                const categoryBadge = card.querySelector('span[style*="uppercase"]');
+                if(categoryBadge) {
+                    const typeText = categoryBadge.innerText.toLowerCase();
+                    if(typeText.includes('newsletter')) {
+                        card.setAttribute('data-category', 'newsletters');
+                    } else if(typeText.includes('blog') || typeText.includes('insight') || typeText.includes('article')) {
+                        card.setAttribute('data-category', 'blogs');
+                    } else {
+                        card.setAttribute('data-category', 'blogs');
+                    }
+                }
+            });
+
+            // --- FY Filter Logic ---
+            const fySidebar = document.getElementById('fy-sidebar');
+            const fyLinks = document.querySelectorAll('.fy-link');
+
+            function updateSidebarVisibility(filter) {
+                // Sidebar is always visible now based on user request
+                // We keep the function to avoid breaking references, but remove the class toggling.
+                fySidebar.classList.add('active');
+            }
+
+            fyLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const selectedFY = link.getAttribute('data-fy');
+                    
+                    fyLinks.forEach(l => l.classList.remove('active'));
+                    link.classList.add('active');
+
+                    blogCards.forEach(card => {
+                        if (card.id === 'blogs-placeholder') return;
+                        
+                        const category = card.getAttribute('data-category');
+                        const cardFY = card.getAttribute('data-fy');
+                        const mainFilter = document.querySelector('.toggle-btn.active').getAttribute('data-filter');
+
+                        // Check if the card matches the main toggle category
+                        let matchesCategory = (mainFilter === 'all') || (category === mainFilter);
+                        
+                        // Check if the card matches the selected FY
+                        let matchesFY = true;
+                        // Financial Years only really apply to newsletters based on our logic, 
+                        // so for blogs, we can either hide them if a specific year is chosen, 
+                        // or just let them show if 'Blogs' is actively toggled.
+                        if (mainFilter === 'all' || mainFilter === 'newsletters') {
+                            if (selectedFY !== 'all' && category === 'newsletters') {
+                                matchesFY = (cardFY === selectedFY);
+                            } else if (selectedFY !== 'all' && category === 'blogs') {
+                                // If "All Years" is NOT selected, and we're looking at All Content, 
+                                // we should probably filter out blogs so they just see the FY newsletters
+                                matchesFY = false; 
+                            }
+                        }
+
+                        if (matchesCategory && matchesFY) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0) scale(1)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px) scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 400);
+                        }
+                    });
+                });
+            });
+
+            // --- Toggle Filter ---
+            toggleBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const filter = btn.getAttribute('data-filter');
+                    
+                    toggleBtns.forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+
+                    updateSidebarVisibility(filter);
+
+                    // Reset FY filter to 'all' when switching tabs for consistency
+                    fyLinks.forEach(l => l.classList.remove('active'));
+                    fyLinks[0].classList.add('active');
+
+                    blogCards.forEach(card => {
+                        const category = card.getAttribute('data-category');
+                        const isPlaceholder = card.id === 'blogs-placeholder';
+                        
+                        // Basic category matches
+                        let matchesCategory = (filter === 'all' && !isPlaceholder) || (category === filter);
+                        
+                        if (matchesCategory) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                                card.style.transform = 'translateY(0) scale(1)';
+                            }, 50);
+                        } else {
+                            card.style.opacity = '0';
+                            card.style.transform = 'translateY(20px) scale(0.95)';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 400);
+                        }
+                    });
+                });
+            });
+            
+            // Initial Sidebar Visibility
+            updateSidebarVisibility('all');
+        });
+    </script>
+</body>
+</html>

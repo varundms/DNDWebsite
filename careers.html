@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Careers at Dahotre & Dahotre - Join our team of professional Chartered Accountants.">
+    <title>Careers | Dahotre & Dahotre</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="images/Favicon.png" type="image/png">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(10, 25, 47, 0.8), rgba(10, 25, 47, 0.9)), url('images/hero-bg.png') center/cover no-repeat;
+            padding: 180px 0 100px;
+            text-align: center;
+            color: white;
+        }
+        .page-title {
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            margin-bottom: 1rem;
+            color: var(--color-surface);
+        }
+        
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        .culture-card {
+            text-align: center;
+            padding: 2rem;
+            background: white;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+        }
+        .culture-card i {
+            font-size: 2.5rem;
+            color: var(--color-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .job-card {
+            background: var(--color-surface);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0,0,0,0.05);
+            transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+        @media (min-width: 768px) {
+            .job-card {
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+        .job-card:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-md);
+        }
+
+        /* Sparkle Effects */
+        .sparkle-container {
+            position: relative;
+            display: inline-block;
+            margin: 0 auto;
+        }
+        .sparkle {
+            position: absolute;
+            color: var(--color-secondary);
+            animation: sparkle-float 3s infinite ease-in-out;
+            opacity: 0;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .sparkle-1 { top: -10px; left: -10px; animation-delay: 0s; font-size: 1.2rem; }
+        .sparkle-2 { top: 20%; right: -15px; animation-delay: 0.5s; font-size: 0.8rem; }
+        .sparkle-3 { bottom: 10%; left: -20px; animation-delay: 1.2s; font-size: 1rem; }
+        .sparkle-4 { top: -20px; right: 20%; animation-delay: 1.8s; font-size: 0.9rem; }
+        .sparkle-5 { bottom: -15px; right: 5px; animation-delay: 2.2s; font-size: 1.1rem; }
+
+        @keyframes sparkle-float {
+            0%, 100% { transform: scale(0) rotate(0deg); opacity: 0; }
+            50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+        }
+
+        .shine-effect {
+            position: relative;
+            overflow: hidden;
+            display: block;
+            border-radius: var(--radius-md);
+        }
+        .shine-effect::after {
+            content: '';
+            position: absolute;
+            top: -110%;
+            left: -110%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                45deg,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(255, 255, 255, 0.1) 45%,
+                rgba(255, 255, 255, 0.5) 50%,
+                rgba(255, 255, 255, 0.1) 55%,
+                rgba(255, 255, 255, 0) 100%
+            );
+            transform: rotate(-45deg);
+            animation: shine 6s infinite;
+        }
+        @keyframes shine {
+            0% { left: -110%; top: -110%; }
+            15% { left: 110%; top: 110%; }
+            100% { left: 110%; top: 110%; }
+        }
+        .job-info h3 {
+            color: var(--color-primary);
+            margin-bottom: 0.5rem;
+        }
+        .job-meta {
+            display: flex;
+            gap: 1.5rem;
+            color: var(--color-text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        .job-meta i { color: var(--color-secondary); }
+        @media (min-width: 768px) {
+            .job-meta { margin-bottom: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="brand" style="padding: 5px 0;">
+                <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 65px; object-fit: contain;">
+            </a>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="nav-item">
+                    <a href="about.html">About Us <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="about.html#leadership">Our Leadership</a>
+                        <a href="about.html#history-values">History & Core Values</a>
+                        <a href="about.html#industry-reach">Industry Reach</a>
+                        <a href="about.html#our-team">Faces of DND</a>
+                        <a href="awards.html">Awards & Recognition</a>
+                    </div>
+                </div>
+                <a href="services.html">Services</a>
+                <div class="nav-item">
+                    <a href="careers.html" class="active">Careers <i class="fas fa-chevron-down" style="font-size: 0.7rem; margin-left: 2px;"></i></a>
+                    <div class="dropdown-menu">
+                        <a href="careers.html#life-at-dnd">Life at DND</a>
+                        <a href="careers.html#open-positions">Open Positions</a>
+                    </div>
+                </div>
+                <a href="decode.html">Blogs</a>
+                <a href="contact.html" class="btn btn-primary" style="color:var(--color-primary); margin-left: 1rem;">Consult Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1 class="page-title animate-on-scroll">Join Our Team</h1>
+            <p style="font-size: 1.2rem; max-width: 600px; margin: 0 auto; color: rgba(255,255,255,0.8);" class="animate-on-scroll">
+                Build a rewarding career. Grow your expertise with industry leaders and shape the future of finance and compliance.
+            </p>
+        </div>
+    </header>
+
+    <!-- Why Join Us Section -->
+    <section class="section bg-surface">
+        <div class="container">
+            <div class="text-center animate-on-scroll" style="margin-bottom: 3rem;">
+                <h2 class="section-title">Why Work With Us?</h2>
+                <p style="color: var(--color-text-muted); max-width: 600px; margin: 0 auto;">At Dahotre & Dahotre, we nurture talent, promote continuous learning, and provide exposure to a diverse portfolio of clients.</p>
+            </div>
+            
+            <div class="culture-grid">
+                <div class="culture-card animate-on-scroll">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Continuous Learning</h3>
+                    <p style="color:var(--color-text-muted); margin-top: 10px;">We invest in regular training and workshops to keep our team ahead of regulatory curves.</p>
+                </div>
+                <div class="culture-card animate-on-scroll" style="transition-delay: 0.1s;">
+                    <i class="fas fa-users"></i>
+                    <h3>Collaborative Culture</h3>
+                    <p style="color:var(--color-text-muted); margin-top: 10px;">Work alongside experienced partners in an open, highly supportive environment.</p>
+                </div>
+                <div class="culture-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <i class="fas fa-briefcase"></i>
+                    <h3>Diverse Exposure</h3>
+                    <p style="color:var(--color-text-muted); margin-top: 10px;">Gain hands-on experience across multiple industries including IT, Manufacturing, and Banking.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Employee Testimonials Section -->
+    <section id="life-at-dnd" class="section text-center" style="background-color: var(--color-background);">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">Life at DND</h2>
+            <p class="animate-on-scroll" style="max-width: 600px; margin: 0 auto 3rem; color: var(--color-text-muted);">
+                What our alumni and current team members say about their experience working with us.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div class="testimonial-card animate-on-scroll">
+                    <p style="font-style: italic; margin-bottom: 1.5rem; color: var(--color-text-main);">"Working at Dahotre & Dahotre gave me unparalleled exposure to diverse sectors. The learning curve was steep but incredibly rewarding for my career."</p>
+                    <h4 style="color: var(--color-primary); margin-bottom: 5px;">Former Articled Assistant</h4>
+                    <span style="font-size: 0.85rem; color: var(--color-text-muted);">Currently a Corporate Finance Manager</span>
+                </div>
+                <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <p style="font-style: italic; margin-bottom: 1.5rem; color: var(--color-text-main);">"The partners are extremely approachable. The firm acts as a family, ensuring that every employee feels valued and intellectually stimulated."</p>
+                    <h4 style="color: var(--color-primary); margin-bottom: 5px;">Senior Tax Consultant</h4>
+                    <span style="font-size: 0.85rem; color: var(--color-text-muted);">Dahotre & Dahotre</span>
+                </div>
+                <div class="testimonial-card animate-on-scroll" style="transition-delay: 0.4s;">
+                    <p style="font-style: italic; margin-bottom: 1.5rem; color: var(--color-text-main);">"I started as an executive and grew into a leadership role here. The firm truly invests in its people and prioritizes internal growth and training."</p>
+                    <h4 style="color: var(--color-primary); margin-bottom: 5px;">Audit Manager</h4>
+                    <span style="font-size: 0.85rem; color: var(--color-text-muted);">Dahotre & Dahotre</span>
+                </div>
+            </div>
+            
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Shared Moments Call to Action -->
+    <section class="section" style="background-color: var(--color-primary); color: white; padding: 100px 0; position: relative; overflow: hidden;">
+        <!-- Background Sparkles (Subtle) -->
+        <i class="fas fa-sparkle sparkle" style="top: 10%; left: 5%; animation-delay: 0.2s; font-size: 1.5rem; opacity: 0.3;"></i>
+        <i class="fas fa-star sparkle" style="top: 40%; left: 12%; animation-delay: 0.9s; font-size: 0.8rem; opacity: 0.2;"></i>
+        <i class="fas fa-sparkles sparkle" style="top: 20%; right: 8%; animation-delay: 1.5s; font-size: 0.8rem; opacity: 0.2;"></i>
+        <i class="fas fa-sparkle sparkle" style="bottom: 15%; left: 10%; animation-delay: 2.8s; font-size: 1.2rem; opacity: 0.2;"></i>
+        <i class="fas fa-star sparkle" style="bottom: 45%; left: 18%; animation-delay: 1.2s; font-size: 0.9rem; opacity: 0.25;"></i>
+        <i class="fas fa-sparkles sparkle" style="bottom: 25%; right: 5%; animation-delay: 0.7s; font-size: 0.9rem; opacity: 0.3;"></i>
+        <i class="fas fa-sparkle sparkle" style="top: 60%; left: 7%; animation-delay: 2.1s; font-size: 1rem; opacity: 0.2;"></i>
+
+        <div class="container text-center" style="position: relative; z-index: 1;">
+            <div class="animate-on-scroll">
+                <div style="position: relative; display: inline-block;">
+                    <i class="fas fa-sparkle sparkle" style="top: -20px; left: -30px; animation-delay: 0.4s; font-size: 1.5rem;"></i>
+                    <h2 class="section-title" style="color: var(--color-secondary); margin-bottom: 2rem;">Our Shared Moments</h2>
+                    <i class="fas fa-star sparkle" style="top: -10px; right: -25px; animation-delay: 1.1s; font-size: 1rem;"></i>
+                </div>
+                
+                <!-- Featured Photo with Sparkles -->
+                <div class="sparkle-container" style="margin-bottom: 3rem; display: block;">
+                    <i class="fas fa-sparkle sparkle sparkle-1"></i>
+                    <i class="fas fa-star sparkle sparkle-2"></i>
+                    <i class="fas fa-sparkles sparkle sparkle-3"></i>
+                    <i class="fas fa-star sparkle sparkle-4"></i>
+                    <i class="fas fa-sparkles sparkle sparkle-5"></i>
+                    <div style="max-width: 450px; margin: 0 auto; position: relative; padding: 12px; border: 1px solid rgba(212, 175, 55, 0.4); border-radius: var(--radius-lg); background: rgba(255,255,255,0.05); backdrop-filter: blur(8px); box-shadow: 0 20px 40px rgba(0,0,0,0.4);">
+                        <div class="shine-effect">
+                            <img src="images/meraki2025_14.JPG" onerror="this.onerror=null; this.src='images/meraki2025_14.jpg';" alt="Annual Team Celebration" style="width: 100%; height: auto; display: block;" class="hover-shadow">
+                        </div>
+                    </div>
+                </div>
+
+                <div style="position: relative; max-width: 750px; margin: 0 auto 3rem;">
+                    <i class="fas fa-sparkle sparkle" style="top: 0; left: -40px; animation-delay: 1.9s; font-size: 1.1rem; opacity: 0.4;"></i>
+                    <p style="color: rgba(255,255,255,0.9); font-size: 1.2rem; line-height: 1.8;">
+                        Beyond the office walls, we celebrate milestones and foster a vibrant community through regular events and cultural activities. Discover how we balance professional excellence with shared joy.
+                    </p>
+                    <i class="fas fa-star sparkle" style="bottom: 0; right: -40px; animation-delay: 2.3s; font-size: 0.9rem; opacity: 0.4;"></i>
+                </div>
+
+                <div style="position: relative; display: inline-block;">
+                    <i class="fas fa-sparkle sparkle" style="bottom: -10px; left: -20px; animation-delay: 0.8s; font-size: 0.8rem;"></i>
+                    <a href="events.html" class="btn btn-primary" style="display: inline-flex; align-items: center; gap: 12px; padding: 1.1rem 2.5rem; box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);">
+                        <i class="fas fa-camera-retro" style="font-size: 1.2rem;"></i> Explore Our Events Gallery
+                    </a>
+                    <i class="fas fa-sparkle sparkle" style="top: -10px; right: -30px; animation-delay: 1.4s; font-size: 1.2rem;"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section id="open-positions" class="section bg-surface">
+        <div class="container">
+            <h2 class="section-title text-center animate-on-scroll">Open Positions</h2>
+            
+            <div style="max-width: 900px; margin: 3rem auto 0;">
+                <!-- Job 1 -->
+                <div class="job-card animate-on-scroll">
+                    <div class="job-info">
+                        <h3>Articleship (CA Trainee)</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-calendar"></i> Immediate</span>
+                        </div>
+                        <p style="color: var(--color-text-main); margin-top: 0.5rem; max-width: 600px;">
+                            We are looking for dedicated candidates pursuing their Chartered Accountancy looking for comprehensive exposure in Audit, Tax, and Advisory domains.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="mailto:info@dahotreca.com?subject=Application for Articleship" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Job 2 -->
+                <div class="job-card animate-on-scroll" style="transition-delay: 0.1s;">
+                    <div class="job-info">
+                        <h3>Audit Executive</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-briefcase"></i> 2-4 Years Exp.</span>
+                        </div>
+                        <p style="color: var(--color-text-main); margin-top: 0.5rem; max-width: 600px;">
+                            Requires a qualified CA or Semi-Qualified professional to lead statutory and internal auditing assignments for mid to large cap corporate clients.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="mailto:info@dahotreca.com?subject=Application for Audit Executive" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+
+                <!-- Job 3 -->
+                <div class="job-card animate-on-scroll" style="transition-delay: 0.2s;">
+                    <div class="job-info">
+                        <h3>Tax Consultant (GST & Direct Tax)</h3>
+                        <div class="job-meta">
+                            <span><i class="fas fa-map-marker-alt"></i> Pune, India</span>
+                            <span><i class="fas fa-clock"></i> Full Time</span>
+                            <span><i class="fas fa-briefcase"></i> 1-3 Years Exp.</span>
+                        </div>
+                        <p style="color: var(--color-text-main); margin-top: 0.5rem; max-width: 600px;">
+                            Looking for a tax specialist capable of managing compliances, advisory, and representations before tax authorities for domestic and international clients.
+                        </p>
+                    </div>
+                    <div style="margin-top: 1.5rem;">
+                        <a href="mailto:info@dahotreca.com?subject=Application for Tax Consultant" class="btn btn-primary">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center" style="margin-top: 4rem;">
+                <p style="color: var(--color-text-muted); margin-bottom: 1rem;">Don't see a role that fits your profile?</p>
+                <a href="mailto:info@dahotreca.com" class="btn btn-outline" style="color: var(--color-primary); border-color: var(--color-primary);">Send Us Your Resume</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <img src="images/logo.jpeg" alt="Dahotre & Dahotre Logo" style="height: 60px; object-fit: contain; margin-bottom: 1rem; background: white; padding: 10px; border-radius: 4px;">
+                    <p>Dahotre and Dahotre Chartered Accountants is an accounting, auditing, and advisory firm backed by a robust network of financial experts, helping businesses navigate compliance and drive sustainable growth across India.</p>
+                    <div style="margin-top: 1rem; display: flex; gap: 15px;">
+                        <a href="https://www.linkedin.com/company/dahotre-and-dahotre" target="_blank" style="color: white; font-size: 1.2rem;"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="services.html#audit">Audit, Assurance & Advisory Services</a></li>
+                        <li><a href="services.html#csw">Company Secretary Work</a></li>
+                        <li><a href="services.html#direct-taxes">Direct Taxation & Income Tax Services</a></li>
+                        <li><a href="services.html#indirect-taxes">Indirect Taxation & GST Services</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Dahotre & Dahotre Chartered Accountants. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
