@@ -237,6 +237,403 @@
 </footer>
 
 <script>
+const HARDCODED_POSTS = {
+  "3017": {
+    "title": "The 13th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 13th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Transfer Pricing Regulations and Compliance. \u2013 Sakshi Jadhav</li>\n<li>GST Under RCM on Import of Services \u2013 Yashraj Bhutada</li>\n<li>Rise and Fall: Vijay Mallya \u2013 Sakshi Pawar</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.13.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.13.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.13.pdf\" id=\"wp-block-file--media-555fe547-e439-47da-a0d2-b194e4cc7bf9\">Newsletter-Issue-2026.13</a><a aria-describedby=\"wp-block-file--media-555fe547-e439-47da-a0d2-b194e4cc7bf9\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.13.pdf\">Download</a></div>\n</article>"
+  },
+  "3014": {
+    "title": "The 12th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 12th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Equalization Levy \u2013 Vanshika Singh</li>\n<li>All About Companies (Accounting Standards) Rules, 2021 \u2013 Sarvesh Mahashabde</li>\n<li>Israel-Iran conflict and its impact \u2013 Prasad Bhasme</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.12-V2.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.12-V2.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.12-V2.pdf\" id=\"wp-block-file--media-a1cf2e69-e882-490c-b363-a66e05ac1b45\">Newsletter-Issue-2026.12-V2</a><a aria-describedby=\"wp-block-file--media-a1cf2e69-e882-490c-b363-a66e05ac1b45\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.12-V2.pdf\">Download</a></div>\n</article>"
+  },
+  "3011": {
+    "title": "The 11th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 11th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>MSMEs in India \u2013 Benefits and Opportunities \u2013Maitreyee Kelkar</li>\n<li>Special audit provisions under Section 66 \u2013 Mayuri Agwal</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.11.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.11.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.11.pdf\" id=\"wp-block-file--media-e4f542ae-4755-4728-ba41-cfb6a136cf34\">Newsletter-Issue-2026.11</a><a aria-describedby=\"wp-block-file--media-e4f542ae-4755-4728-ba41-cfb6a136cf34\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.11.pdf\">Download</a></div>\n</article>"
+  },
+  "3005": {
+    "title": "The 10th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 10th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Taxation on Joint Ventures \u2013 Dipali Kalyankar</li>\n<li>Input Service Distributor (ISD) under GST \u2013 Vedant Potdar</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.10.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.10.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.10.pdf\" id=\"wp-block-file--media-339823a7-54e7-4ee1-a8ce-c950b196591c\">Newsletter-Issue-2026.10</a><a aria-describedby=\"wp-block-file--media-339823a7-54e7-4ee1-a8ce-c950b196591c\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.10.pdf\">Download</a></div>\n</article>"
+  },
+  "3002": {
+    "title": "The 9th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 9th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Peer Review Findings: Common Mistakes Firms Make \u2013 Maitreyee Kelkar</li>\n<li>Income Tax Act 1961 vs Income Tax Act 2025 \u2013 Rutuja Shingare</li>\n<li>Bull Run In Metals \u2013 Sairaj Thombare</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.09.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.09.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.09.pdf\" id=\"wp-block-file--media-bd080034-c073-4412-889d-bab302ede581\">Newsletter-Issue-2026.09</a><a aria-describedby=\"wp-block-file--media-bd080034-c073-4412-889d-bab302ede581\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/03/Newsletter-Issue-2026.09.pdf\">Download</a></div>\n</article>"
+  },
+  "2994": {
+    "title": "The 8th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 8th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Hedge Accounting \u2013 Vanshika Singh</li>\n<li>Can Recovery Be Made From a Dead Person Under GST? \u2013 Snehal Kulkarni</li>\n<li>Tariffs War \u2013 Bhavana Chitte</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.08.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.08.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.08.pdf\" id=\"wp-block-file--media-e4233882-90a1-4a19-8b55-38d552192571\">Newsletter-Issue-2026.08</a><a aria-describedby=\"wp-block-file--media-e4233882-90a1-4a19-8b55-38d552192571\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.08.pdf\">Download</a></div>\n</article>"
+  },
+  "2991": {
+    "title": "The 7th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 7th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>How are gains taxed when you buy Unlisted Shares and Sell after listing? \u2013 Som Nath Acharya</li>\n<li>Inverted Duty Structure Under GST \u2013 Mayuri Agwal</li>\n<li>Case Study: Minimalist \u2013 A Journey from Startup Spark to HUL\u2019s Premium Beauty Powerhouse -Vedika Pawale</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.07.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.07.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.07.pdf\" id=\"wp-block-file--media-acb25261-286e-4fab-8d06-4554f1e59d45\">Newsletter-Issue-2026.07</a><a aria-describedby=\"wp-block-file--media-acb25261-286e-4fab-8d06-4554f1e59d45\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.07.pdf\">Download</a></div>\n</article>"
+  },
+  "2987": {
+    "title": "The 6th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 6th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Types of scrutiny \u2013 Vinod Jangid</li>\n<li>The Nirav Modi Scam: A Cautionary Tale for Indian Banking \u2013 Prasad Bhasme</li>\n<li>Tiger Global Holdings \u2013 Legal &amp; Tax Analysis -Yashraj Bhutada</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.06.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.06.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.06.pdf\" id=\"wp-block-file--media-e9e2d4b2-3bc0-4df1-9f03-8bc63696ef7e\">Newsletter-Issue-2026.06</a><a aria-describedby=\"wp-block-file--media-e9e2d4b2-3bc0-4df1-9f03-8bc63696ef7e\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.06.pdf\">Download</a></div>\n</article>"
+  },
+  "2984": {
+    "title": "The 5th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 5th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>The Stamp Paper Scam, 2003 -Vanshika Singh</li>\n<li>FORM 67 -Sakshi Jadhav</li>\n<li>GCCs in India -Bhavana Chitte</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.05.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.05.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.05.pdf\" id=\"wp-block-file--media-06ab9a17-5da5-45d7-a4cd-460727295a00\">Newsletter-Issue-2026.05</a><a aria-describedby=\"wp-block-file--media-06ab9a17-5da5-45d7-a4cd-460727295a00\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.05.pdf\">Download</a></div>\n</article>"
+  },
+  "2981": {
+    "title": "The 4th Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 4th Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>UNDERSTANDING NOC BY CA WHEN AND WHY ITS REQUIRED -Snehal Kulkarni</li>\n<li>IND AS 105- Non-current Assets Held for Sale and Discontinued Operations -Som Nath Acharya</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.04.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.04.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.04.pdf\" id=\"wp-block-file--media-7da21460-2b49-4603-8938-9ba5f4b66151\">Newsletter-Issue-2026.04</a><a aria-describedby=\"wp-block-file--media-7da21460-2b49-4603-8938-9ba5f4b66151\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/02/Newsletter-Issue-2026.04.pdf\">Download</a></div>\n</article>"
+  },
+  "2976": {
+    "title": "The 3rd Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 3rd Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>SPECIAL PROVISIONS APPLICABLE TO NRI UNDER INCOME TAX ACT, 1961 \u2013 Ishwari Kumbhakarna</li>\n<li>DTAA \u2013 Maitreyee Kelkar</li>\n<li>Compliances of EBE for Corporates \u2013 Sakshi Pawar</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.03.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.03.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.03.pdf\" id=\"wp-block-file--media-d242a568-b5a6-4097-97ae-cdced6bff140\">Newsletter-Issue-2026.03</a><a aria-describedby=\"wp-block-file--media-d242a568-b5a6-4097-97ae-cdced6bff140\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.03.pdf\">Download</a></div>\n</article>"
+  },
+  "2973": {
+    "title": "The 2nd Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 2nd Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Unhedged Foreign Currency Exposure (UFCE)\u00a0\u2013 Isha Dagra</li>\n<li>The 2G Spectrum Scam \u2013 Prasad Bhasme</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.02.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.02.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.02.pdf\" id=\"wp-block-file--media-5da599c3-03d1-4040-afb3-9449c1126f84\">Newsletter-Issue-2026.02</a><a aria-describedby=\"wp-block-file--media-5da599c3-03d1-4040-afb3-9449c1126f84\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.02.pdf\">Download</a></div>\n</article>"
+  },
+  "2970": {
+    "title": "The 1st Issue of 2026 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 1st Issue of 2026 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Form 13 \u2013 Yashraj Bhutada</li>\n<li>IND AS 24: Related Party Transactions \u2013 Rutuja Shingare</li>\n<li>Basic Terms of Insurance \u2013 Sarvesh Mahashabde</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2026.01.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.01.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.01.pdf\" id=\"wp-block-file--media-41db4950-073d-4317-987e-7bddffb53f19\">Newsletter-Issue-2026.01</a><a aria-describedby=\"wp-block-file--media-41db4950-073d-4317-987e-7bddffb53f19\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2026/01/Newsletter-Issue-2026.01.pdf\">Download</a></div>\n</article>"
+  },
+  "2964": {
+    "title": "The 50th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 50th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Private Equity by Sakshi Jadhav.</li>\n<li>Realisation Account by Som Nath Acharya.</li>\n<li>RERA Audit by Prasad Bhasme.</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.50.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.50.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.50.pdf\" id=\"wp-block-file--media-aba88c69-8169-4c13-95ef-bd11a26bdc3f\">Newsletter-Issue-2025.50</a><a aria-describedby=\"wp-block-file--media-aba88c69-8169-4c13-95ef-bd11a26bdc3f\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.50.pdf\">Download</a></div>\n</article>"
+  },
+  "2960": {
+    "title": "The 49th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 49th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Materiality in Audit \u2013 SA 320 by Ishwari Kumbhakarna.</li>\n<li>Foreign Contribution Regulation Act (FCRA): Overview and Compliance by Dipali Kalyankar.</li>\n<li>New Labour Code 2025 by Gaurav Watkar.</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.49.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.49.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.49.pdf\" id=\"wp-block-file--media-2ae29edc-7177-4b34-9055-07d5f0ed16fe\">Newsletter-Issue-2025.49</a><a aria-describedby=\"wp-block-file--media-2ae29edc-7177-4b34-9055-07d5f0ed16fe\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.49.pdf\">Download</a></div>\n</article>"
+  },
+  "2957": {
+    "title": "The 48th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 48th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Debt vs Equity \u2014 Which Is Better for Business Expansion? by Sairaj Thombare.</li>\n<li>What is window dressing, and how to detect it by Vanshikha Singh.</li>\n<li>Understanding Methods Of Business Valuation by Bhavna Chitte.</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.48.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.48.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.48.pdf\" id=\"wp-block-file--media-ca712527-3d97-4a90-8046-e34865f440b9\">Newsletter-Issue-2025.48</a><a aria-describedby=\"wp-block-file--media-ca712527-3d97-4a90-8046-e34865f440b9\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.48.pdf\">Download</a></div>\n</article>"
+  },
+  "2954": {
+    "title": "The 47th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 47th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Arrest Under GST, clubbed with BNSS by Sakshi Pawar.</li>\n<li>IND AS 41: Agriculture by Sarvesh Mahashabde.</li>\n<li>Why Credit Rating Matters for Businesses by Maitreyee Kelkar.</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.47.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.47.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.47.pdf\" id=\"wp-block-file--media-6b906379-eba1-4de4-9292-00602ab2ea10\">Newsletter-Issue-2025.47</a><a aria-describedby=\"wp-block-file--media-6b906379-eba1-4de4-9292-00602ab2ea10\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.47.pdf\">Download</a></div>\n</article>"
+  },
+  "2951": {
+    "title": "The 46th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 46th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Anti-profiteering under GST by Mayuri Agwal.</li>\n<li>Form 26 QC by Som Nath Acharya.</li>\n<li>TYPES OF TAX PAYMENTS AVAILABLE ON THE INCOME TAX PORTAL by Yashraj Bhutada. </li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.46.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.46.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.46.pdf\" id=\"wp-block-file--media-27299560-392c-43f9-b91a-45294031e12e\">Newsletter-Issue-2025.46</a><a aria-describedby=\"wp-block-file--media-27299560-392c-43f9-b91a-45294031e12e\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.46.pdf\">Download</a></div>\n</article>"
+  },
+  "2948": {
+    "title": "The 45th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 45th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Revised Form 10BD by Dipali Kalyankar.</li>\n<li>Sections 50C, 50CA &amp; 50D \u2013 Income Tax Act, 1961 by Rutuja Shingare.</li>\n<li>Due Diligence by Tanaya Yeske.</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.45.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.45.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.45.pdf\" id=\"wp-block-file--media-5cba0f4d-ded8-4ffd-be06-a4e8cf0a2a5d\">Newsletter-Issue-2025.45</a><a aria-describedby=\"wp-block-file--media-5cba0f4d-ded8-4ffd-be06-a4e8cf0a2a5d\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/12/Newsletter-Issue-2025.45.pdf\">Download</a></div>\n</article>"
+  },
+  "2935": {
+    "title": "The 44th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 44th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Document Identification Number (DIN) in CGST/Income Tax: An emerging area of dispute by Sakshi Jadhav</li>\n<li>Legal Entity Identifier (LEI): Purpose and Applicability in India by Sarvesh Mahashabde</li>\n<li>ITAT Mumbai quashes \u20b9445 crore adjustment: Netflix India ruled to be a limited-risk distributor, not a content/tech entrepreneur by Prasad Bhasme</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.44.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.44.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.44.pdf\" id=\"wp-block-file--media-da4cbb2d-dd93-4532-8b6a-fc8288654325\">Newsletter-Issue-2025.44</a><a aria-describedby=\"wp-block-file--media-da4cbb2d-dd93-4532-8b6a-fc8288654325\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.44.pdf\">Download</a></div>\n</article>"
+  },
+  "2932": {
+    "title": "The 43rd Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 43rd Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>New GST Rules 2025 Decoded: What Rule 9A &amp; 14A Mean for Startups MSMEs by Snehal Kulkarni</li>\n<li>Form 26A by Gaurav Watkar</li>\n<li>Understanding Neo Banks by Bhavana Chitte</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.43.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.43.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.43.pdf\" id=\"wp-block-file--media-a7902d38-5cdb-4166-92a8-608119f5a4bd\">Newsletter-Issue-2025.43</a><a aria-describedby=\"wp-block-file--media-a7902d38-5cdb-4166-92a8-608119f5a4bd\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.43.pdf\">Download</a></div>\n</article>"
+  },
+  "2929": {
+    "title": "The 42nd Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 42nd Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Agricultural Income Taxation by Vanshika Singh</li>\n<li>Intimation Under Section 143(1) by Mayuri Agwal</li>\n<li>Non-compliance with Rule 86B of the CGST Rules, 2017 by Sairaj Thombare</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.42.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.42.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.42.pdf\" id=\"wp-block-file--media-c101f332-c367-4faa-9680-d5d34acd34e7\">Newsletter-Issue-2025.42</a><a aria-describedby=\"wp-block-file--media-c101f332-c367-4faa-9680-d5d34acd34e7\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.42.pdf\">Download</a></div>\n</article>"
+  },
+  "2926": {
+    "title": "The 41st Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 41st Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Section 43B(h) of the Income Tax Act: A Game-Changer for MSME Payments by Rutuja Shingare</li>\n<li>E-way Bill System in India by Snehal Kulkarni</li>\n<li>Rise and Fall of Reliance ADA Group by Ishwari Kumbhakarna</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.41.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.41.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.41.pdf\" id=\"wp-block-file--media-08cd37da-3a07-4bf5-a2f9-e61cf0a69794\">Newsletter-Issue-2025.41</a><a aria-describedby=\"wp-block-file--media-08cd37da-3a07-4bf5-a2f9-e61cf0a69794\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/11/Newsletter-Issue-2025.41.pdf\">Download</a></div>\n</article>"
+  },
+  "2919": {
+    "title": "The 40th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p>\u00a011 Oct\u00a0\u00a0\u00a0<a href=\"https://dahotreca.com/?cat=17\">Newsletter</a></p>\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 40th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Orange economy by Vanshika Singh</li>\n<li>IND AS 19 by Mayuri Agwal</li>\n<li>Benefits Of Incorporating Private Limited Company by Bhavana Chitte</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.40.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.40.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.40.pdf\" id=\"wp-block-file--media-87bfb3ee-28ea-486f-a8ca-ca04e694b231\">Newsletter-Issue-2025.40</a><a aria-describedby=\"wp-block-file--media-87bfb3ee-28ea-486f-a8ca-ca04e694b231\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.40.pdf\">Download</a></div>\n</article>"
+  },
+  "2915": {
+    "title": "The 39th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p>\u00a011 Oct\u00a0\u00a0\u00a0<a href=\"https://dahotreca.com/?cat=17\">Newsletter</a></p>\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 39th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Revision of Income Tax Return filed by Maitreyee Kelkar</li>\n<li>Forms applicable to charitable and religious trusts/institutions under the Income Tax Act, 1961 by Som Nath Acharya</li>\n<li>TDS u/s 194T by Gaurav Watkar</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.39.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.39.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.39.pdf\" id=\"wp-block-file--media-d86c15c0-6fba-4702-acee-9e59a4c8ff6c\">Newsletter-Issue-2025.39</a><a aria-describedby=\"wp-block-file--media-d86c15c0-6fba-4702-acee-9e59a4c8ff6c\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.39.pdf\">Download</a></div>\n</article>"
+  },
+  "2912": {
+    "title": "The 38th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p>\u00a011 Oct\u00a0\u00a0\u00a0<a href=\"https://dahotreca.com/?cat=17\">Newsletter</a></p>\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 38th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Form 29B by Ishwari Kumbhakarna</li>\n<li>Peer Review &amp; Quality Review by Sarthak Gite</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.38.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.38.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.38.pdf\" id=\"wp-block-file--media-c16677c7-5b6d-4d34-8017-057ebcecc789\">Newsletter-Issue-2025.38</a><a aria-describedby=\"wp-block-file--media-c16677c7-5b6d-4d34-8017-057ebcecc789\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.38.pdf\">Download</a></div>\n</article>"
+  },
+  "2908": {
+    "title": "The 37th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p>\u00a011 Oct\u00a0\u00a0\u00a0<a href=\"https://dahotreca.com/?cat=17\">Newsletter</a></p>\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 37th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Agricultural income is and its taxation by Rutuja Shingare</li>\n<li>UDIN by Ishwari Kumbhakarna</li>\n<li>LRS by Prasad Bhasme</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.37.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.37.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.37.pdf\" id=\"wp-block-file--media-8ad1deda-e49f-4279-b29d-813653af750b\">Newsletter-Issue-2025.37</a><a aria-describedby=\"wp-block-file--media-8ad1deda-e49f-4279-b29d-813653af750b\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.37.pdf\">Download</a></div>\n</article>"
+  },
+  "2905": {
+    "title": "The 36th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p>\u00a011 Oct\u00a0\u00a0\u00a0<a href=\"https://dahotreca.com/?cat=17\">Newsletter</a></p>\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 36th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>GST on Real Estate Transactions by Tanaya Yeske</li>\n<li>Angel Tax on Start-ups by Dipali Kalyankar</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.36.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.36.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.36.pdf\" id=\"wp-block-file--media-377b9f6e-bb07-444a-954f-706d260d4c6a\">Newsletter-Issue-2025.36</a><a aria-describedby=\"wp-block-file--media-377b9f6e-bb07-444a-954f-706d260d4c6a\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/10/Newsletter-Issue-2025.36.pdf\">Download</a></div>\n</article>"
+  },
+  "2894": {
+    "title": "The 35th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 35th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Section 115BAA of the Income Tax Act, 1961 by Sakshi Pawar</li>\n<li>ADR under GST by Sairaj Thombare</li>\n<li>GST Reforms 2.0 by Snehal Kulkarni</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.35.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/09/Newsletter-Issue-2025.35.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/09/Newsletter-Issue-2025.35.pdf\" id=\"wp-block-file--media-70769171-c71b-4f77-b9d2-ce300d852d6b\">Newsletter-Issue-2025.35</a><a aria-describedby=\"wp-block-file--media-70769171-c71b-4f77-b9d2-ce300d852d6b\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/09/Newsletter-Issue-2025.35.pdf\">Download</a></div>\n</article>"
+  },
+  "2891": {
+    "title": "The 34th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 34th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Stock transfer under GST by Tanaya Yeske</li>\n<li>Ind AS 102: Share based payments by Yashraj Bhutada</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.34.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/09/Newsletter-Issue-2025.34.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/09/Newsletter-Issue-2025.34.pdf\" id=\"wp-block-file--media-95a1c897-ab3a-4110-a044-aa20930242a9\">Newsletter-Issue-2025.34</a><a aria-describedby=\"wp-block-file--media-95a1c897-ab3a-4110-a044-aa20930242a9\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/09/Newsletter-Issue-2025.34.pdf\">Download</a></div>\n</article>"
+  },
+  "2887": {
+    "title": "The 33rd Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 33rd Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Invoice Management System (IMS) Under GST by Rutuja Shingare</li>\n<li>Returns under Section 139 of the Income Tax Act, 1961 by Dipali Kalyankar</li>\n<li>Indian Chamber of Commerce vs. DCIT \u2013 Charitable Status by Isha Dagra</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.33.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.33.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.33.pdf\" id=\"wp-block-file--media-e53d7f74-a2ba-4294-80e3-5592d3a1e1cd\">Newsletter-Issue-2025.33</a><a aria-describedby=\"wp-block-file--media-e53d7f74-a2ba-4294-80e3-5592d3a1e1cd\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.33.pdf\">Download</a></div>\n</article>"
+  },
+  "2884": {
+    "title": "The 32nd Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 32nd Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>DRC forms in GST by Sarvesh Mahashabde </li>\n<li>Grandfathering provisions under Capital Gains by Prasad Bhasme</li>\n<li>IFSCA by Bharat Sharma</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.32.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.32.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.32.pdf\" id=\"wp-block-file--media-f3958b64-881f-4848-a207-58402ee0f9ca\">Newsletter-Issue-2025.32</a><a aria-describedby=\"wp-block-file--media-f3958b64-881f-4848-a207-58402ee0f9ca\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.32.pdf\">Download</a></div>\n</article>"
+  },
+  "2880": {
+    "title": "The 31th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 31th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Capital Gains Account Scheme by Ishwari Kumbhakarna</li>\n<li>Penalties under the Income Tax Act, 1961 by Maitreyee Kelkar</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.31.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.31.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.31.pdf\" id=\"wp-block-file--media-24cd6568-8f71-4706-86a0-4518ab7ec2f7\">Newsletter-Issue-2025.31</a><a aria-describedby=\"wp-block-file--media-24cd6568-8f71-4706-86a0-4518ab7ec2f7\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.31.pdf\">Download</a></div>\n</article>"
+  },
+  "2875": {
+    "title": "The 30th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 30th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Transfer Pricing by Bharat Sharma </li>\n<li>Taxation of Section 8 Company by Yashraj Bhutada</li>\n<li>Case Study: Fall of Arthur Anderson by Sarvesh Mahashabde</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.30.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.30.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.30.pdf\" id=\"wp-block-file--media-48661347-ff70-44ce-b6af-c19135f30f65\">Newsletter-Issue-2025.30</a><a aria-describedby=\"wp-block-file--media-48661347-ff70-44ce-b6af-c19135f30f65\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.30.pdf\">Download</a></div>\n</article>"
+  },
+  "2872": {
+    "title": "The 29th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 29th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<ol>\n<li>Registration and Taxability of Charitable Trusts by Isha Dagra</li>\n<li>GST Registration by Shivanjali Tambe</li>\n<li>Professional and Ethical Duty of a Chartered Accountant by Rutuja Shingare</li>\n</ol>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.29.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.29.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.29.pdf\" id=\"wp-block-file--media-5067e4cb-2dd3-4185-bdc9-dd3a6f436fbf\">Newsletter-Issue-2025.29</a><a aria-describedby=\"wp-block-file--media-5067e4cb-2dd3-4185-bdc9-dd3a6f436fbf\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.29.pdf\">Download</a></div>\n</article>"
+  },
+  "2869": {
+    "title": "The 28th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 28th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>IND AS 40: Investment Property by Sarthak Gite</li>\n<li>Income Tax on Joint Development Agreement by Dipali Kalyankar</li>\n<li>Essar group and its Downfall by Prasad Bhasme</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.28.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.28.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.28.pdf\" id=\"wp-block-file--media-cbd3cb5d-b775-448d-a0aa-7cf5e9fea59f\">Newsletter-Issue-2025.28</a><a aria-describedby=\"wp-block-file--media-cbd3cb5d-b775-448d-a0aa-7cf5e9fea59f\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/08/Newsletter-Issue-2025.28.pdf\">Download</a></div>\n</article>"
+  },
+  "2860": {
+    "title": "The 27th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 27th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Make In India Certificate by Sakshi Pawar</li>\n<li>Tax Deducted at Source (TDS) under GST by Ishwari Kumbhakarna</li>\n<li>ITR Forms by Sakshi Jadhav</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.27.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.27.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.27.pdf\" id=\"wp-block-file--media-76012087-e52f-48fa-97b1-abe0009101e6\">Newsletter-Issue-2025.27</a><a aria-describedby=\"wp-block-file--media-76012087-e52f-48fa-97b1-abe0009101e6\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.27.pdf\">Download</a></div>\n</article>"
+  },
+  "2855": {
+    "title": "The 26th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 26th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>GST on Joint Development Agreements</li>\n<li>Case Study: Rapido</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.26.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.26.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.26.pdf\" id=\"wp-block-file--media-e595c1d6-962d-4905-809b-0c7f12f6cbc3\">Newsletter-Issue-2025.26</a><a aria-describedby=\"wp-block-file--media-e595c1d6-962d-4905-809b-0c7f12f6cbc3\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.26.pdf\">Download</a></div>\n</article>"
+  },
+  "2852": {
+    "title": "The 25th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 25th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>IND AS 12: Income tax</li>\n<li>Hostile Takeover in India: Lessons from the L&amp;T\u2013Mindtree Case</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.25.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.25.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.25.pdf\" id=\"wp-block-file--media-005c7e2b-35a4-4219-8c33-02cd4c967275\">Newsletter-Issue-2025.25</a><a aria-describedby=\"wp-block-file--media-005c7e2b-35a4-4219-8c33-02cd4c967275\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.25.pdf\">Download</a></div>\n</article>"
+  },
+  "2849": {
+    "title": "The 24th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 24th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Cash Deposits in Cases of Businesses Covered under Presumptive Taxation</li>\n<li>Behavioral Finance</li>\n<li>Mastering The Art of Appearance Before GST Authorities</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.24.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.24.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.24.pdf\" id=\"wp-block-file--media-506cf97b-723c-46e8-ba05-af5394abb9b0\">Newsletter-Issue-2025.24</a><a aria-describedby=\"wp-block-file--media-506cf97b-723c-46e8-ba05-af5394abb9b0\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.24.pdf\">Download</a></div>\n</article>"
+  },
+  "2846": {
+    "title": "The 23rd Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 23rd Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Can You Issue a GST Credit Note for Returned Export Goods After Claiming IGST Refund?</li>\n<li>INVESTMENT BANKING AND DERVATIVES</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.23.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.23.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.23.pdf\" id=\"wp-block-file--media-7e7e34fb-e2d1-48a8-884f-bd5c06ddf311\">Newsletter-Issue-2025.23</a><a aria-describedby=\"wp-block-file--media-7e7e34fb-e2d1-48a8-884f-bd5c06ddf311\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.23.pdf\">Download</a></div>\n</article>"
+  },
+  "2843": {
+    "title": "The 22nd Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 22nd Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Common Mistakes in E-Way Bill Compliance that Lead to GST Penalty</li>\n<li>Eicher Motors Limited Vs Superintendent of GST and Central Excise (Madras High Court)</li>\n<li>HUF \u2013 A Way To Save Income Tax</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.22.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.22.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.22.pdf\" id=\"wp-block-file--media-0e34b6f6-9239-4edc-b9fb-c75e820f0885\">Newsletter-Issue-2025.22</a><a aria-describedby=\"wp-block-file--media-0e34b6f6-9239-4edc-b9fb-c75e820f0885\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.22.pdf\">Download</a></div>\n</article>"
+  },
+  "2840": {
+    "title": "The 21st Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 21st Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>ICDS</li>\n<li>SA 700 Forming an Opinionand Reporting on Financial Statements</li>\n<li>Section 80M of Income Tax Act</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.21.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.21.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.21.pdf\" id=\"wp-block-file--media-8f41557c-fb05-4d69-a365-0d4389dce092\">Newsletter-Issue-2025.21</a><a aria-describedby=\"wp-block-file--media-8f41557c-fb05-4d69-a365-0d4389dce092\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.21.pdf\">Download</a></div>\n</article>"
+  },
+  "2837": {
+    "title": "The 20th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 20th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Taxation of Different types of Entities \u2013 Bharat Sharma</li>\n<li>Income from Other Sources \u2013 Prasad Bhasme</li>\n<li>Networth Certificate \u2013 Sarthak Gite</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.20.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.20.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.20.pdf\" id=\"wp-block-file--media-1f5db44d-d883-4bc5-9c2f-f0e9b6b36bc5\">Newsletter-Issue-2025.20</a><a aria-describedby=\"wp-block-file--media-1f5db44d-d883-4bc5-9c2f-f0e9b6b36bc5\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.20.pdf\">Download</a></div>\n</article>"
+  },
+  "2833": {
+    "title": "The 19th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 19th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Expenses disallowed under Income Tax Act \u2013 Sakshi Pawar</li>\n<li>Applicability of Ind AS \u2013 Maitreyee Kelkar</li>\n<li>Case Study: The JioHotstar Merger \u2013 Vinod Jangid</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.19.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.19.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.19.pdf\" id=\"wp-block-file--media-d87a392d-7f58-4abe-ac6e-2ba31803d8ce\">Newsletter-Issue-2025.19</a><a aria-describedby=\"wp-block-file--media-d87a392d-7f58-4abe-ac6e-2ba31803d8ce\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.19.pdf\">Download</a></div>\n</article>"
+  },
+  "2830": {
+    "title": "The 18th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 18th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Income from Business and Profession- Sarvesh Mahashabde</li>\n<li>Rule 86B of CGST rules- Vedika Pawale</li>\n<li>Gensol Engineering: This clean energy company isn\u2019t so clean- Abhishek Maske</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.18.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.18.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.18.pdf\" id=\"wp-block-file--media-a0630487-b970-44f1-835f-0fd7bad3552d\">Newsletter-Issue-2025.18</a><a aria-describedby=\"wp-block-file--media-a0630487-b970-44f1-835f-0fd7bad3552d\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.18.pdf\">Download</a></div>\n</article>"
+  },
+  "2827": {
+    "title": "The 17th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 17th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>Capital gains-Tanaya Yeske</li>\n<li>Appeals and Revision under GST-Aditya Kanade\u00a0</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.17.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.17.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.17.pdf\" id=\"wp-block-file--media-f61fa7fb-0934-4be1-b6a0-536715436c00\">Newsletter-Issue-2025.17</a><a aria-describedby=\"wp-block-file--media-f61fa7fb-0934-4be1-b6a0-536715436c00\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.17.pdf\">Download</a></div>\n</article>"
+  },
+  "2824": {
+    "title": "The 16th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 16th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>IND AS 23 Borrowing Cost \u2013 Bharat Sharma</li>\n<li>Types of Notices issued under Income tax Act \u2013 Vinod Jangid</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.16.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.16.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.16.pdf\" id=\"wp-block-file--media-3000419d-b3c7-490d-85d5-49c986a08ff2\">Newsletter-Issue-2025.16</a><a aria-describedby=\"wp-block-file--media-3000419d-b3c7-490d-85d5-49c986a08ff2\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.16.pdf\">Download</a></div>\n</article>"
+  },
+  "2818": {
+    "title": "The 14th Issue of 2025 of Dahotre\u2019s Weekly Newsletter",
+    "category": "Newsletter",
+    "date": "",
+    "readTime": 5,
+    "author": "DahotreCA",
+    "content": "<article class=\"small\">\n<p><em><strong>Greetings for the Day! Welcome to the New Edition of the Newsletter!</strong></em></p>\n<p><em><strong>The 14th Issue of 2025 of Dahotre\u2019s Weekly Newsletter is here!</strong></em></p>\n<p><strong><u>Update your knowledge with the help of following topics:</u></strong></p>\n<ol>\n<li>FEMA \u2013 Srushti Zodage</li>\n<li>Import and Export under GST \u2013 Pooja Amrutkar</li>\n<li>Recent downfall in Equity Markets \u2013 Sarvesh Mahashabde</li>\n</ol>\n<div class=\"wp-block-file\" data-wp-interactive=\"core/file\"><object aria-label=\"Embed of Newsletter-Issue-2025.14.\" class=\"wp-block-file__embed\" data=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.14.pdf\" data-wp-bind--hidden=\"!state.hasPdfPreview\" style=\"width:100%;height:600px\" type=\"application/pdf\"></object><a href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.14.pdf\" id=\"wp-block-file--media-0a21821a-3de8-4808-abc3-6ad0857157d2\">Newsletter-Issue-2025.14</a><a aria-describedby=\"wp-block-file--media-0a21821a-3de8-4808-abc3-6ad0857157d2\" class=\"wp-block-file__button wp-element-button\" download=\"\" href=\"https://dahotreca.com/wp-content/uploads/2025/07/Newsletter-Issue-2025.14.pdf\">Download</a></div>\n</article>"
+  }
+};
+
+</script>
+<script>
   // ===== SUPABASE CONFIG — PASTE YOUR VALUES BELOW =====
   const SUPABASE_URL = 'https://xesverwwupzbofpnilko.supabase.co';
   const SUPABASE_ANON_KEY = ' eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhlc3Zlcnd3dXB6Ym9mcG5pbGtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczNTk5ODgsImV4cCI6MjA5MjkzNTk4OH0.0bU5dnxYo6RIjTC0s_zuoNEaFZHXfl4JLK68Ztv46H4 ';
@@ -267,6 +664,12 @@
 
   async function loadPost() {
     if (!postId) { showNotFound(); return; }
+
+    // Check hardcoded posts first
+    if (typeof HARDCODED_POSTS !== 'undefined' && HARDCODED_POSTS[postId]) {
+      renderPost(HARDCODED_POSTS[postId]);
+      return;
+    }
 
     // Try Supabase first
     try {
