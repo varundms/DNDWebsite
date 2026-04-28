@@ -1090,5 +1090,75 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     </script>
+
+    <script>
+        const SUPABASE_URL = 'https://xesverwwupzbofpnilko.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inhlc3Zlcnd3dXB6Ym9mcG5pbGtvIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzczNTk5ODgsImV4cCI6MjA5MjkzNTk4OH0.0bU5dnxYo6RIjTC0s_zuoNEaFZHXfl4JLK68Ztv46H4';
+
+        let supabaseEvents = {};
+
+        async function fetchEvents() {
+            try {
+                const res = await fetch(`${SUPABASE_URL}/rest/v1/events?order=created_at.desc`, {
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+                if (!res.ok) return;
+                const events = await res.json();
+                
+                const culturalGrid = document.querySelector('#cultural .gallery-grid');
+                const seminarsGrid = document.querySelector('#seminars .gallery-grid');
+
+                events.reverse().forEach(ev => {
+                    supabaseEvents[ev.id] = ev;
+                    
+                    const card = document.createElement('div');
+                    card.className = 'event-card animate-on-scroll is-visible';
+                    card.onclick = () => openSupabaseGallery(ev.id);
+                    
+                    card.innerHTML = `
+                        <img src="${ev.cover_url || ''}" onerror="this.onerror=null; this.src='images/placeholder.png';" alt="${ev.title}" class="event-img">
+                        <div class="event-details">
+                            <span class="event-tag">${ev.tag || 'Event'}</span>
+                            <h3 class="event-title">${ev.title}</h3>
+                            <p class="event-desc">${ev.description || ''}</p>
+                        </div>
+                    `;
+
+                    if (ev.tab === 'cultural') {
+                        if (culturalGrid) culturalGrid.insertBefore(card, culturalGrid.firstChild);
+                    } else {
+                        if (seminarsGrid) seminarsGrid.insertBefore(card, seminarsGrid.firstChild);
+                    }
+                });
+            } catch (e) {
+                console.error("Error fetching events:", e);
+            }
+        }
+
+        function openSupabaseGallery(id) {
+            const ev = supabaseEvents[id];
+            if (!ev) return;
+            
+            let html = "";
+            if (ev.gallery && ev.gallery.length > 0) {
+                ev.gallery.forEach((photoUrl, i) => {
+                    html += `<img src="${photoUrl}" alt="${ev.title} Photo ${i+1}" onclick="openLightbox(this.src)">`;
+                });
+            } else {
+                html = "<p style='color:white;'>No photos available for this event.</p>";
+            }
+
+            document.getElementById('modalTitle').innerText = ev.title + " Photo Gallery";
+            document.getElementById('modalGallery').innerHTML = html;
+            document.getElementById('eventModal').style.display = "block";
+            document.body.style.overflow = "hidden";
+        }
+
+        document.addEventListener('DOMContentLoaded', fetchEvents);
+    </script>
+
 </body>
 </html>
