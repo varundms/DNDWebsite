@@ -1118,8 +1118,10 @@ document.addEventListener('DOMContentLoaded', () => {
                     card.className = 'event-card animate-on-scroll is-visible';
                     card.onclick = () => openSupabaseGallery(ev.id);
                     
+                    const coverImage = ev.cover_url || (ev.gallery && ev.gallery.length > 0 ? ev.gallery[0] : 'images/events_thumb.png');
+                    
                     card.innerHTML = `
-                        <img src="${ev.cover_url || ''}" onerror="this.onerror=null; this.src='images/placeholder.png';" alt="${ev.title}" class="event-img">
+                        <img src="${coverImage}" onerror="this.onerror=null; this.src='images/events_thumb.png';" alt="${ev.title}" class="event-img">
                         <div class="event-details">
                             <span class="event-tag">${ev.tag || 'Event'}</span>
                             <h3 class="event-title">${ev.title}</h3>
