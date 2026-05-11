@@ -10,11 +10,21 @@ const imagesDir = path.join(root, "images");
 
 const url = process.env.SUPABASE_URL?.trim();
 const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
+const anonKey = process.env.SUPABASE_ANON_KEY?.trim();
 const bucket = process.env.STORAGE_PUBLIC_BUCKET?.trim() || "dnd-site-images";
 
-if (!url || !serviceKey) {
-  console.error("Set SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY in .env (service role is server-side only; never commit it).");
+const apiKey = serviceKey || anonKey;
+if (!url || !apiKey) {
+  console.error(
+    "Set SUPABASE_URL and either SUPABASE_SERVICE_ROLE_KEY (recommended) or SUPABASE_ANON_KEY in .env."
+  );
   process.exit(1);
+}
+
+if (!serviceKey && anonKey) {
+  console.warn(
+    "Using SUPABASE_ANON_KEY for uploads. Ensure Storage policies allow anon writes for this bucket only; prefer service role and remove open policies after bulk upload."
+  );
 }
 
 const extMime = {
@@ -36,7 +46,7 @@ function guessMime(filePath) {
   return extMime[ext] || "application/octet-stream";
 }
 
-const supabase = createClient(url, serviceKey, {
+const supabase = createClient(url, apiKey, {
   auth: { persistSession: false, autoRefreshToken: false },
 });
 
