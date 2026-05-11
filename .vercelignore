@@ -1,0 +1,2 @@
+# Skip large local assets; HTML is rewritten to Supabase Storage at build time.
+images/
