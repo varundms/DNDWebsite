@@ -26,13 +26,22 @@ const supabaseAnon = process.env.SUPABASE_ANON_KEY?.trim() || "";
 
 if (!imagesBase) {
   console.error(
-    "Missing image CDN base. Set PUBLIC_SITE_IMAGES_BASE (full URL ending with /) or both SUPABASE_URL and STORAGE_PUBLIC_BUCKET."
+    "Missing image CDN base. Set in Vercel → Settings → Environment Variables (or build.env in vercel.json):\n" +
+      "  PUBLIC_SITE_IMAGES_BASE (optional full URL ending with /), or\n" +
+      "  SUPABASE_URL + STORAGE_PUBLIC_BUCKET (e.g. dnd-site-images)."
   );
   process.exit(1);
 }
 
 if (!supabaseUrl || !supabaseAnon) {
-  console.error("Missing SUPABASE_URL or SUPABASE_ANON_KEY for API calls in HTML.");
+  const missing = [
+    !supabaseUrl && "SUPABASE_URL",
+    !supabaseAnon && "SUPABASE_ANON_KEY",
+  ].filter(Boolean);
+  console.error(
+    `Missing: ${missing.join(", ")}.\n` +
+      "Vercel Git builds do not use your local .env file. Add these under Project → Settings → Environment Variables for Production and Preview (same project if you moved teams)."
+  );
   process.exit(1);
 }
 
