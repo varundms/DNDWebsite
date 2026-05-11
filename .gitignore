@@ -2,3 +2,6 @@
 out/
 node_modules/
 .vercel
+
+# Images: canonical copies live in Supabase Storage (dnd-site-images). Keep locally for `npm run upload:images`.
+/images/
