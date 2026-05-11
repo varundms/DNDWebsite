@@ -5,7 +5,8 @@
   "scripts": {
     "build": "node scripts/build-site.mjs",
     "upload:images": "node scripts/upload-images.mjs",
-    "deploy": "vercel deploy --prod --yes --non-interactive"
+    "deploy": "vercel deploy --prod --yes --non-interactive --scope saas-dev",
+    "vercel:git": "vercel git connect https://github.com/varundms/DNDWebsite.git --yes --scope saas-dev"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.49.1",
